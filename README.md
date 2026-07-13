@@ -53,10 +53,15 @@ All scripts are in the `tools/` directory, and experiment configuration files ar
 
 Training:
 
+​```
+python tools/train.py --cfg experiments/mpii/hrnet/w32_256x256_adamw_lr1e-4.yaml
+​```
+
 Evaluation:
 
-> The exact argument names depend on this repository's config parser. Check the `argparse` section at the top of `tools/train.py` and `tools/test.py` and adjust the flags above to match.
-
+​```
+python tools/test.py --cfg experiments/mpii/hrnet/w32_256x256_adamw_lr1e-4.yaml TEST.MODEL_FILE path/to/checkpoint.pth
+​```
 ## Repository structure
 
 - `tools/` — training, testing, and tracing scripts (`train.py`, `test.py`, `trace.py`)
@@ -64,3 +69,4 @@ Evaluation:
 - `lib/` — model, dataset, and utility code
 - `models/` — model definitions or pretrained backbones
 - `log/`, `output/` — training logs and results
+  
