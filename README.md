@@ -69,4 +69,38 @@ python tools/test.py --cfg experiments/mpii/hrnet/w32_256x256_adamw_lr1e-4.yaml 
 - `lib/` — model, dataset, and utility code
 - `models/` — model definitions or pretrained backbones
 - `log/`, `output/` — training logs and results
+
+## Model settings (from the paper)
+
+- Optimizer: AdamW
+- Learning rate: 1e-5 for the ResNet backbone, 1e-4 elsewhere; weight decay 1e-4
+- Input size: 384x288 or 512x384 for COCO; 384x384 or 512x512 for MPII
+- Training: 50 epochs (75 in some runs), learning rate reduced by 10x after 40 epochs
+- Augmentation: random rotation ([-40, 40]), random scaling ([0.7, 1.3]), flipping, and half-body augmentation
+
+## Citation
+
+If you use this code, please cite:
+
+> Aidoo, E.; Wang, X.; Liu, Z.; Tenagyei, E.K.; Owusu-Agyemang, K.; Kodjiku, S.L.; Ejianya, V.N.; Aggrey, E.S.E.B. Cofopose: Conditional 2D Pose Estimation with Transformers. *Sensors* 2022, 22, 6821. https://doi.org/10.3390/s22186821
+
+```bibtex
+@article{aidoo2022cofopose,
+  title   = {Cofopose: Conditional 2D Pose Estimation with Transformers},
+  author  = {Aidoo, Evans and Wang, Xun and Liu, Zhenguang and Tenagyei, Edwin Kwadwo and Owusu-Agyemang, Kwabena and Kodjiku, Seth Larweh and Ejianya, Victor Nonso and Aggrey, Esther Stacy E. B.},
+  journal = {Sensors},
+  volume  = {22},
+  pages   = {6821},
+  year    = {2022},
+  publisher = {MDPI},
+  doi     = {10.3390/s22186821}
+}
+```
+
+## Acknowledgements
+
+This work builds on DETR and conditional DETR, and draws on Pose Recognition with Cascade Transformers (PRTR). Thanks to the authors of those works.
+
+
+
   
